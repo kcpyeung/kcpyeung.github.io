@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "how to travel"
+title:  "How to travel"
 date:   2016-04-02 10:35:36 +0800
 categories: musing
 ---
