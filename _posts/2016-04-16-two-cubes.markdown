@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Two cubes"
+date:   2016-04-16 16:59:36 +0800
+categories: maths
+---
+Imagine we have 2 cubes of different sizes and volumes, like so:
+
+![two cubes](/images/2-cubes.jpg)
+
+Given that the sum of the cubes' volumes is 370 and the sum of the cubes' sides is 10, most of us instinctively let x be the bigger cube and y the smaller one and reach for simultaneously equations:
+
+<div class="highlighter-rouge"><pre class="highlight">
+x<sup>3</sup> + y<sup>3</sup> = 370 ----- (1)
+</pre></div>
+
+```
+x + y = 10 -------- (2)
+```
+
+From (2):
+
+```
+y = 10 - x -------- (3)
+```
+
+Substitute (3) into (1):
+
+<div class="highlighter-rouge"><pre class="highlight">
+x<sup>3</sup> + (10 - x)<sup>3</sup> = 370
+</pre></div>
+
+After some minor scuffle with algebra and quadratic equation, hopefully you'll find ```x = 7``` and therefore, ```y = 3```. Decades of separation between you and your maths lessons caused confusion and delay.
+
+However, there is a much simpler way. Because the two sides add up to 10, we can call the longer side ```5 + x``` and the short one ```5 - x```. Therefore:
+
+<div class="highlighter-rouge"><pre class="highlight">
+(5 + x)<sup>3</sup> + (5 - x)<sup>3</sup> = 370.
+</pre></div>
+
+With only 1 unknown in 1 equation, this resolves quickly to:
+
+<div class="highlighter-rouge"><pre class="highlight">
+x<sup>2</sup> = 4
+</pre></div>
+
+So the sides are 7 and 3.
+
+This is but one wonderful mathematical problem from Arithmetica by Diophantus from almost 2,000 years ago that inspired Fermat's Last Theorem.
