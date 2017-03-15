@@ -129,7 +129,21 @@ F-statistic: 48.48 on 2 and 31 DF,  p-value: 2.863e-10
 > 
 {% endhighlight %}
 
-There are a few things to notice here. First, p-value is below 0.05 so we reject H<sub>0</sub>. In other words, price and/or advertising correlate(s) with sales. But which one? We see the triple stars at the end of line after sales$Price and sales$Advertising. Looking up the significance codes just below we see that they have a value between 0 and 0.001. Since both of them have triple stars, they both correlate. Finally, check adjusted R-squared is above 0.7 to ensure our model covers a large portion of sales variation.
+There are a few things to notice here. First, overall p-value is 2.863e-10 and below 0.05 so we reject H<sub>0</sub>. In other words, price and/or advertising correlate(s) with sales. But which one? We look at the triple stars on the right after sales$Price and sales$Advertising. Reading under the Pr(>\|t\|) column, the p-value of H<sub>0</sub> for β<sub>price</sub>=0 is 9.20e-09, way below 0.05. We reject the H<sub>0</sub>. That means sales$Price has a significant correlation with sales. The same goes for sales$Advertising. Finally, check adjusted R-squared is above 0.7 to ensure our model covers a large portion of sales variation. The significance of the terms can also be obtained using anova:
+
+{% highlight r %}
+> anova(reg)
+Analysis of Variance Table
+
+Response: sales$Sales
+                  Df   Sum Sq  Mean Sq F value    Pr(>F)    
+sales$Price        1 28153486 28153486  69.152 2.155e-09 ***
+sales$Advertising  1 11319245 11319245  27.803 9.822e-06 ***
+Residuals         31 12620947   407127                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+{% endhighlight %}
 
 Another way to see which independent variable has a correlation is to run step-wise multiple regression. A *forward selection* adds each independent variable iteratively to see if it's significant. A significant independent variable is kept. This process goes on under all the independent variables are tested. A *backward elimination* subtracts terms from the full model. A *bidirectional elimination* combines both approaches. This process gets tedious very quickly. Luckily, R does it for us in a few lines of code.
 
