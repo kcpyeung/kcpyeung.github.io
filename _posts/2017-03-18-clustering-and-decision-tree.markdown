@@ -224,6 +224,7 @@ Most columns are easy to understand but some takes a bit of explaining. ed is an
 Our aim is to use the training set of 700 records to predict how likely a future borrower will default. First, we construct a decision tree.
 
 {% highlight r %}
+> library(party)
 > loan_ctree <- ctree(loan$default ~ loan$age + loan$ed + loan$employ + loan$address + loan$income + loan$debtinc + loan$creddebt + loan$othdebt)
 > loan_ctree
 
