@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Halting Problem"
+title:  "The halting problem"
 date:   2017-08-13 17:00:00 +0800
 categories: maths
 ---
@@ -28,7 +28,7 @@ def devil(program):
 
 Here comes to proof. What happens when I call devil with itself as argument, as in `devil(devil)`?
 
-Calling `devil(devil)` is exactly the same as `program(input)` in `will_halt`, so if `will_halt` is true (line 2 in `devil`), `devil` loops forever and will not halt. If `devil(devil)` does not halt, then `will_halt` is false (else-branch in `devil`), and `devil` returns and halts. Either case, `devil` defies our magical `will_halt` and we have a contradiction.
+Calling `devil(devil)` is exactly the same as `program(input)` in `will_halt`, so if `will_halt` is true (line 2 in `devil`), `devil` loops forever and will not halt. If `devil(devil)` does not halt, then `will_halt` is false, and `devil` returns and halts (else-branch in `devil`). Either case, `devil` defies our magical `will_halt` and we have a contradiction.
 
 By [reductio ad absurdum](https://en.wikipedia.org/wiki/Reductio_ad_absurdum), this means our initial premise of the existence of `will_halt` is false. In other words, there exists no algorithm that can decide whether a program halts on its input.
 
