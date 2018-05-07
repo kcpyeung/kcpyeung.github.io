@@ -175,7 +175,7 @@ sales$Sales ~ sales$Price + sales$Advertising
 
 Point to note here is we start with an initial model of sales$Sales ~ sales$Price + sales$Advertising and end up with the same final model. Therefore, no term was added or subtracted and both are significantly correlated to sales.
 
-One last interesting thing about our energy bar example is the regression model itself. From the R output, we can construct `sales = 3.61 * advertising - 53.22 * price + 5837.52`. Take shop 1 for example, we see that the output value of $3,419.54 is pretty close to the real sales value of $4,141. Suppose the company now wants to eliminate advertising because it's costly. At what price should we sell the energy bar for us to generate the same sales amount? We can just drop the advertising term in our model to get `4141 = 5837.52 - 53.22 * price`. It's trivial to solve the equation to find the new price 31.88.
+One last interesting thing about our energy bar example is the regression model itself. From the R output, we can construct `sales = 3.61 * advertising - 53.22 * price + 5837.52`.<sup>[1]</sup> Take shop 1 for example, we see that the output value of $3,419.54 is pretty close to the real sales value of $4,141. Suppose the company now wants to eliminate advertising because it's costly. At what price should we sell the energy bar for us to generate the same sales amount? We can just drop the advertising term in our model to get `4141 = 5837.52 - 53.22 * price`. It's trivial to solve the equation to find the new price 31.88.
 
 The following R code shows a different data set following the same multiple linear regression workflow. This time, we want to find which factor correlates to a cigarette's nicotine content. At the end, we'll see that a cigarette's weight and its CO content don't correlate to its nicotine content. It is the tar that matters.
 
@@ -253,3 +253,24 @@ cigdata$Nicotine.content..mg. ~ cigdata$Tar.content..mg.
 {% endhighlight %}
 
 Finally, remember: **Correlation is not causation**
+
+[1] The equation can be obtained by the following:
+{% highlight r %}
+> as.formula(
+  paste0("sales ~ ", round(coefficients(reg)[1],2), "", 
+         paste(sprintf(" %+.2f*%s ", 
+                       coefficients(reg)[-1],  
+                       names(coefficients(reg)[-1])), 
+               collapse="")
+  )
+)
+sales ~ 5837.52 - 53.22 * sales$Price + 3.61 * sales$Advertising
+{% endhighlight %}
+
+### Revisions
+<small>
+7 May 2018: Added code for generating linear regression model as formula.
+
+<small>
+14 March 2017: Original version published.
+
