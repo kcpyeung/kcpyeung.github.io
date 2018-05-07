@@ -16,3 +16,10 @@ The software I write will never be as mission-critical as that on the space shut
 
 [1] [https://science.ksc.nasa.gov/shuttle/missions/51-l/docs/rogers-commission/Appendix-F.txt](https://science.ksc.nasa.gov/shuttle/missions/51-l/docs/rogers-commission/Appendix-F.txt)
 
+### Revisions
+<small>
+7 May 2018: Added NASA reference.
+
+<small>
+24 July 2012: Original version published.
+
