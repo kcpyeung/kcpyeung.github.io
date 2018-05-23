@@ -179,6 +179,6 @@ mean of the differences
 > 
 {% endhighlight %}
 
-The p-value is > 0.05, therefore we reject the null hypothesis. In other words, there is a significant difference between the P/E ratios in the 2 years across the 9 companies. Other uses of paired t-test include tumour size difference before and after drug treatment in the same patient.
+The p-value is > 0.05, therefore we failed to reject the null hypothesis. In other words, there is no significant difference between the P/E ratios in the 2 years across the 9 companies. Other uses of paired t-test include tumour size difference before and after drug treatment in the same patient.
 
 It should be noted that the difference between independent and paired t-test is quite subtle. For example, if I want to do A/B testing of a website I have to use one or the other depending on what I'm trying to test. If I want to find out whether women, compared to men, respond more strongly to a webpage, I'd use independent t-test. The two independent populations are women and men and I have to keep my webpage identical. On the other hand suppose I want to test if people click on green buttons more often than red buttons, I would serve an otherwise identical webpage with either a green or a red button randomly to the same population. I'd then use paired t-test to compare the number of times the buttons are clicked on to find their differences.
