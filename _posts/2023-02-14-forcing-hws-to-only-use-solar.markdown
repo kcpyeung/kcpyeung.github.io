@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Programming blackout period on Sanden heat pump"
+title:  "Programming block out period on Sanden heat pump"
 date:   2023-02-14 18:00:00 +1100
 categories: note-to-self
 ---
