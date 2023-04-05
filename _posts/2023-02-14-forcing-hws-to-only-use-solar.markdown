@@ -21,3 +21,6 @@ working during those hours.
 - To block the heat pump from 9pm to 9am, set bo value to `2109`. Press enter to set.
 
 To disable block out, set bo value to `0000`.
+
+[user manual](/assets/gaua45hpa.pdf)
+
